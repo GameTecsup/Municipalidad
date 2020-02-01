@@ -1,0 +1,22 @@
+Instalacion de Git
+-Ingreso cmd
+
+git
+
+
+git --version
+
+
+git config --global user.name "name"
+
+git config user.name
+
+git config --global user.email "albert.@gmail.com
+
+git config --global color.ui true
+
+git status  ve el estado de complementos a subir
+
+
+En carpeta donde si guardara cambiios
+git init 
