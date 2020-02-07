@@ -8,6 +8,7 @@ package formularios;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.ImageIcon;
 import javax.swing.Timer;
 import rojerusan.RSAnimation;
 
@@ -16,17 +17,20 @@ import rojerusan.RSAnimation;
  * @author alber
  */
 public class carga extends javax.swing.JFrame {
-
     // proceso de carga
     private Timer t;
     private int n = 0;
     
     
-
+    
     public carga() {
-        
         initComponents();
-        //Inicia proceso de carga---------------------------------------------------------
+        
+                // Textto de titulo
+        setTitle("Carga de Aplicacion ");
+          // Icono 
+        setIconImage( new ImageIcon(getClass().getResource("/img/logosocabaya.png")).getImage());      
+           //Inicia proceso de carga---------------------------------------------------------
         
         progreso.setValue(0);
         progreso.setColorBackground(new Color(0,0,0,0));
@@ -43,7 +47,7 @@ public class carga extends javax.swing.JFrame {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                //throw new UnsupportedOperationException("Not supported yet."); 
+                               //throw new UnsupportedOperationException("Not supported yet."); 
                 if(n <= 100){
                     progreso.setValue(n);
                     n = n +10;
@@ -61,6 +65,8 @@ public class carga extends javax.swing.JFrame {
         t.start();
         
         //--------------------------------------------------------------------------------------        
+         
+        
     }
 
     /**
@@ -83,9 +89,7 @@ public class carga extends javax.swing.JFrame {
 
         rSPanelGradiente1.setColorPrimario(new java.awt.Color(0, 51, 0));
         rSPanelGradiente1.setColorSecundario(new java.awt.Color(0, 102, 51));
-        rSPanelGradiente1.setGradiente(rspanelgradiente.RSPanelGradiente.Gradiente.HORIZONTAL);
 
-        Circleloguin.setColorFondo(new java.awt.Color(240, 240, 240));
         Circleloguin.setImagen(new javax.swing.ImageIcon(getClass().getResource("/img/logosocabaya.png"))); // NOI18N
 
         javax.swing.GroupLayout CircleloguinLayout = new javax.swing.GroupLayout(Circleloguin);
@@ -100,6 +104,8 @@ public class carga extends javax.swing.JFrame {
         );
 
         textloguin.setImagen(new javax.swing.ImageIcon(getClass().getResource("/img/letra.png"))); // NOI18N
+        textloguin.setOpaque(true);
+        textloguin.setPreferredSize(new java.awt.Dimension(278, 150));
 
         javax.swing.GroupLayout textloguinLayout = new javax.swing.GroupLayout(textloguin);
         textloguin.setLayout(textloguinLayout);
@@ -122,21 +128,21 @@ public class carga extends javax.swing.JFrame {
         rSPanelGradiente1Layout.setHorizontalGroup(
             rSPanelGradiente1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(rSPanelGradiente1Layout.createSequentialGroup()
-                .addContainerGap(58, Short.MAX_VALUE)
+                .addGap(87, 87, 87)
                 .addComponent(Circleloguin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41)
+                .addGap(31, 31, 31)
                 .addComponent(textloguin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(81, 81, 81))
+                .addContainerGap(62, Short.MAX_VALUE))
             .addComponent(progreso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         rSPanelGradiente1Layout.setVerticalGroup(
             rSPanelGradiente1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(rSPanelGradiente1Layout.createSequentialGroup()
-                .addGap(83, 83, 83)
-                .addGroup(rSPanelGradiente1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGap(93, 93, 93)
+                .addGroup(rSPanelGradiente1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(textloguin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Circleloguin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 107, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
                 .addComponent(progreso, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -146,11 +152,11 @@ public class carga extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(rSPanelShadow1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(rSPanelShadow1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(rSPanelShadow1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(rSPanelShadow1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -181,7 +187,6 @@ public class carga extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(carga.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
