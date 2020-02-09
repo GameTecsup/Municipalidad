@@ -37,7 +37,7 @@ public class Libro {
  public Vector getLibro() {
     Vector vRet = null;
     try {
-        String sql = "select id ,titulo,autor,categoria,fecha_ingreso,descripcion from libro order by id";
+        String sql = "select id ,titulo,autor,categoria,editorial,fecha_ingreso,descripcion,cantidad from libro order by id";
         cBaseDatos bd = new cBaseDatos();        
         Connection xcon = bd.Conectar();
         Statement stm = xcon.createStatement();
@@ -59,27 +59,26 @@ public class Libro {
         String xtit = datos[1];
         String xaut = datos[2];
         String xcat = datos[3];
+        String xedi = datos[4];
       //  String xfec = datos[4];   
-     
-        String xfec = this.getFecha();  
-     
-      
-   
-        String xdes = datos[5];
-        String sql = "insert into libro (id ,titulo,autor,categoria,fecha_ingreso,descripcion) values (?,?,?,?,?,?) ";
+        String xfec = datos[5];   
+        String xdes = datos[6];
+        String xcan = datos[7];
+        String sql = "insert into libro (id ,titulo,autor,categoria,editorial,fecha_ingreso,descripcion,cantidad) values (?,?,?,?,?,?,?,?) ";
         Connection xcon = db.Conectar();
         PreparedStatement ps = xcon.prepareStatement(sql);
         ps.setString(1, xcod);
         ps.setString(2, xtit);
         ps.setString(3, xaut);
         ps.setString(4, xcat);
-        
- 
-        ps.setString(5, xfec);
-       
-        ps.setString(6, xdes);
+        ps.setString(5, xedi);
+        ps.setString(6, xfec);
+        ps.setString(7, xdes);
+        ps.setString(8, xcan);
         ps.executeUpdate();
         xcon.close();
+        
+        
     }
 
  
@@ -89,21 +88,24 @@ public class Libro {
         String xtit = datos[1];
         String xaut = datos[2];
         String xcat = datos[3];
+        String xedi = datos[4];
        //   String xfec = datos[4];
-      String xfec = this.getFecha(); 
-        String xdes = datos[5];
-        String sql = "update libro set  titulo=?, autor=?, categoria=? , fecha_ingreso=?, descripcion=?  where id=? ";
+        String xfec = datos[5]; 
+        String xdes = datos[6];
+        String xcan = datos[7];
+        String sql = "update libro set  titulo=?, autor=?, categoria=? ,editorial=?,fecha_ingreso=?, descripcion=?,cantidad=?  where id=? ";
         cBaseDatos db = new cBaseDatos();
         Connection xcon = db.Conectar();
         PreparedStatement ps = xcon.prepareStatement(sql);
         ps.setString(1, xtit);
         ps.setString(2, xaut);
         ps.setString(3, xcat);
-        ps.setString(4, xfec);
+        ps.setString(4, xedi);
+        ps.setString(5, xfec);
         //  ps.setString(4, xfec);
         
-        ps.setString(5, xdes);
-        ps.setString(6, xcod);
+        ps.setString(6, xdes);
+        ps.setString(7, xcan);
         ps.executeUpdate();
         xcon.close();
     }

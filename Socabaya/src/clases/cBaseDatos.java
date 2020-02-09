@@ -9,6 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import javax.swing.DefaultComboBoxModel;
 
 
 
@@ -121,9 +122,27 @@ public class cBaseDatos {
          
     return false;
     
-} 
-   
-   
-   
+}
+      public DefaultComboBoxModel Obt_Categoria(){
+          DefaultComboBoxModel listaModelo= new DefaultComboBoxModel(); 
+        try{
+        Connection xcon = this.Conectar();
+      
+        String sql="select * from categorias order by categorias";
+        listaModelo.addElement("Seleccione Categoria");
+          PreparedStatement ps=xcon.prepareStatement(sql);
+        ResultSet rs = ps.executeQuery(sql);
+      
+            while(rs.next()){
+                listaModelo.addElement(rs.getString("categorias"));
+            }
+            rs.close();
+        }catch(SQLException ex){
+            System.out.println(ex.getMessage());
+            
+        }
+        return listaModelo;
+    }
+     
    
     }
