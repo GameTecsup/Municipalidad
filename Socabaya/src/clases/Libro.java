@@ -93,7 +93,7 @@ public class Libro {
         String xfec = datos[5]; 
         String xdes = datos[6];
         String xcan = datos[7];
-        String sql = "update libro set  titulo=?, autor=?, categoria=? ,editorial=?,fecha_ingreso=?, descripcion=?,cantidad=?  where id=? ";
+        String sql = "update libro set  titulo=?, autor=?, categoria=? ,editorial=?,fecha_ingreso=?, descripcion=?,cantidad=?  where id="+xcod ;
         cBaseDatos db = new cBaseDatos();
         Connection xcon = db.Conectar();
         PreparedStatement ps = xcon.prepareStatement(sql);
