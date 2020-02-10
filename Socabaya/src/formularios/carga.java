@@ -40,7 +40,7 @@ public class carga extends javax.swing.JFrame {
         rsutilities.RSUtilities.setOpaqueVentana(this,false);
         // Area de deslizmiento x , y      setSubir
         RSAnimation.setBajar(-200 , 90 ,2,2,Circleloguin);
-        RSAnimation.setBajar(-200 , 90 ,2,2,textloguin);
+
         
         // Implemntacion de clase abtracta
         ActionListener accion = new ActionListener(){
@@ -81,14 +81,16 @@ public class carga extends javax.swing.JFrame {
         rSPanelShadow1 = new rojeru_san.RSPanelShadow();
         rSPanelGradiente1 = new rspanelgradiente.RSPanelGradiente();
         Circleloguin = new rojerusan.RSPanelCircleImage();
-        textloguin = new rojerusan.RSPanelImage();
         progreso = new rojerusan.RSProgressBarSinText();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
         rSPanelGradiente1.setColorPrimario(new java.awt.Color(0, 51, 0));
         rSPanelGradiente1.setColorSecundario(new java.awt.Color(0, 102, 51));
+        rSPanelGradiente1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Circleloguin.setImagen(new javax.swing.ImageIcon(getClass().getResource("/img/logosocabaya.png"))); // NOI18N
 
@@ -103,48 +105,23 @@ public class carga extends javax.swing.JFrame {
             .addGap(0, 150, Short.MAX_VALUE)
         );
 
-        textloguin.setImagen(new javax.swing.ImageIcon(getClass().getResource("/img/letra.png"))); // NOI18N
-        textloguin.setOpaque(true);
-        textloguin.setPreferredSize(new java.awt.Dimension(278, 150));
-
-        javax.swing.GroupLayout textloguinLayout = new javax.swing.GroupLayout(textloguin);
-        textloguin.setLayout(textloguinLayout);
-        textloguinLayout.setHorizontalGroup(
-            textloguinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 278, Short.MAX_VALUE)
-        );
-        textloguinLayout.setVerticalGroup(
-            textloguinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 150, Short.MAX_VALUE)
-        );
+        rSPanelGradiente1.add(Circleloguin, new org.netbeans.lib.awtextra.AbsoluteConstraints(87, 93, -1, -1));
 
         progreso.setForeground(new java.awt.Color(0, 102, 51));
         progreso.setValue(10);
         progreso.setColorBorde(new java.awt.Color(0, 102, 51));
         progreso.setColorForeground(new java.awt.Color(0, 51, 0));
+        rSPanelGradiente1.add(progreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 608, 20));
 
-        javax.swing.GroupLayout rSPanelGradiente1Layout = new javax.swing.GroupLayout(rSPanelGradiente1);
-        rSPanelGradiente1.setLayout(rSPanelGradiente1Layout);
-        rSPanelGradiente1Layout.setHorizontalGroup(
-            rSPanelGradiente1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(rSPanelGradiente1Layout.createSequentialGroup()
-                .addGap(87, 87, 87)
-                .addComponent(Circleloguin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
-                .addComponent(textloguin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(62, Short.MAX_VALUE))
-            .addComponent(progreso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        rSPanelGradiente1Layout.setVerticalGroup(
-            rSPanelGradiente1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(rSPanelGradiente1Layout.createSequentialGroup()
-                .addGap(93, 93, 93)
-                .addGroup(rSPanelGradiente1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(textloguin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Circleloguin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
-                .addComponent(progreso, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
+        jLabel1.setForeground(java.awt.Color.white);
+        jLabel1.setText("SOCABAYA");
+        rSPanelGradiente1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 110, -1, 167));
+
+        jLabel2.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Biblioteca Municipal de");
+        rSPanelGradiente1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(285, 122, 256, 34));
 
         rSPanelShadow1.add(rSPanelGradiente1, java.awt.BorderLayout.CENTER);
 
@@ -199,9 +176,10 @@ public class carga extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private rojerusan.RSPanelCircleImage Circleloguin;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private rojerusan.RSProgressBarSinText progreso;
     private rspanelgradiente.RSPanelGradiente rSPanelGradiente1;
     private rojeru_san.RSPanelShadow rSPanelShadow1;
-    private rojerusan.RSPanelImage textloguin;
     // End of variables declaration//GEN-END:variables
 }

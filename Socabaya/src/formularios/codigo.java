@@ -41,7 +41,8 @@ public class codigo extends javax.swing.JFrame {
         rSPanelShadow1 = new rojeru_san.RSPanelShadow();
         rSPanelGradiente1 = new rspanelgradiente.RSPanelGradiente();
         rSPanelImage1 = new rojerusan.RSPanelImage();
-        title = new rojerusan.RSLabelImage();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         rSPanelImage3 = new rojerusan.RSPanelImage();
         txtcodigo = new rojeru_san.RSMPassView();
@@ -59,30 +60,35 @@ public class codigo extends javax.swing.JFrame {
         rSPanelImage1.setImagen(new javax.swing.ImageIcon(getClass().getResource("/img/login.jpg"))); // NOI18N
         rSPanelImage1.setPreferredSize(new java.awt.Dimension(369, 141));
 
-        title.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/letra.png"))); // NOI18N
-        title.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseDragged(java.awt.event.MouseEvent evt) {
-                titleMouseDragged(evt);
-            }
-        });
-        title.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                titleMousePressed(evt);
-            }
-        });
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
+        jLabel2.setForeground(java.awt.Color.white);
+        jLabel2.setText("SOCABAYA");
+
+        jLabel3.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Biblioteca Municipal de");
 
         javax.swing.GroupLayout rSPanelImage1Layout = new javax.swing.GroupLayout(rSPanelImage1);
         rSPanelImage1.setLayout(rSPanelImage1Layout);
         rSPanelImage1Layout.setHorizontalGroup(
             rSPanelImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(rSPanelImage1Layout.createSequentialGroup()
-                .addGap(46, 46, 46)
-                .addComponent(title, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(61, Short.MAX_VALUE))
+                .addGap(61, 61, 61)
+                .addComponent(jLabel2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rSPanelImage1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         rSPanelImage1Layout.setVerticalGroup(
             rSPanelImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(title, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE)
+            .addGroup(rSPanelImage1Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -176,7 +182,7 @@ public class codigo extends javax.swing.JFrame {
             rSPanelGradiente1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(rSPanelImage1, javax.swing.GroupLayout.DEFAULT_SIZE, 397, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rSPanelGradiente1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(36, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31))
         );
@@ -252,19 +258,6 @@ public class codigo extends javax.swing.JFrame {
     }//GEN-LAST:event_btnErmegenciaActionPerformed
   // Declarar variables de movilidad   - para  title
     int x , y ;
-    private void titleMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_titleMousePressed
-             //   Agregar Ejes para el evento   - del loguin
-        
-        x=evt.getX();
-        y=evt.getY();
-    }//GEN-LAST:event_titleMousePressed
-
-    private void titleMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_titleMouseDragged
-        // Label Image title - Socabaya - Mover de acuerdo a la localizacion -login
-                        this.setLocation(this.getLocation().x+evt.getX()-x ,
-                this.getLocation().y + evt.getY() - y);
-    }//GEN-LAST:event_titleMouseDragged
-
     /**
      * @param args the command line arguments
      */
@@ -304,13 +297,14 @@ public class codigo extends javax.swing.JFrame {
     private rojerusan.RSButtonRound btnErmegencia;
     private rojerusan.RSButtonRound btnSalir;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel labelCodigo;
     private rspanelgradiente.RSPanelGradiente rSPanelGradiente1;
     private rojerusan.RSPanelImage rSPanelImage1;
     private rojerusan.RSPanelImage rSPanelImage3;
     private rojeru_san.RSPanelShadow rSPanelShadow1;
-    private rojerusan.RSLabelImage title;
     private rojeru_san.RSMPassView txtcodigo;
     // End of variables declaration//GEN-END:variables
 }
