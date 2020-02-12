@@ -232,7 +232,7 @@ public class Principal extends javax.swing.JFrame {
 
         btn3.setBackground(new java.awt.Color(255, 102, 51));
         btn3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Filtro.png"))); // NOI18N
-        btn3.setText("Busqueda");
+        btn3.setText("Categoría");
         btn3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btn3.setName("btn3"); // NOI18N
         btn3.addActionListener(new java.awt.event.ActionListener() {
@@ -773,8 +773,8 @@ public class Principal extends javax.swing.JFrame {
                         .addComponent(txtCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(35, 35, 35)
                         .addComponent(txtCodigo1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 120, Short.MAX_VALUE))
-            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, 1020, Short.MAX_VALUE)
+                .addGap(0, 102, Short.MAX_VALUE))
+            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, 1002, Short.MAX_VALUE)
         );
         panel3Layout.setVerticalGroup(
             panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
