@@ -4,6 +4,7 @@ JFrom Principal
 package formularios;
 
 // Palette Deslizamiento    - Carpeta Deslizamiento
+import clases.Categoria;
 import clases.Libro;
 import clases.cBaseDatos;
 import java.awt.Color;
@@ -65,11 +66,8 @@ public class Principal extends javax.swing.JFrame {
         
         // Sesion de Carga Lista de Herramientas
        cargarLista();     
-       
-       
-
-       
-       
+       cargarLista2();
+              
        
        
        
@@ -79,6 +77,22 @@ public class Principal extends javax.swing.JFrame {
      // Seccion de Herramientas   
  
 // Listado del libro    25/01/2020
+              public void cargarLista2(){
+        model = new DefaultTableModel();        
+        tblLista1.setModel(model);
+           model.addColumn("CODIGO");
+        model.addColumn("CATEGORIA");
+  
+                      
+        Categoria libro = new Categoria();
+        Vector arrLibro = (Vector)libro.getCategoria();
+        for(int i=0;i<arrLibro.size();i++){
+            Vector dato = (Vector)arrLibro.get(i);
+                model.addRow(dato);
+        }
+        tblLista.updateUI();  
+                
+    } 
         public void cargarLista(){
         model = new DefaultTableModel();        
         tblLista.setModel(model);
@@ -152,7 +166,17 @@ public class Principal extends javax.swing.JFrame {
         tblLista = new rojerusan.RSTableMetro();
         panel3 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        letraCodigo8 = new javax.swing.JLabel();
+        txtCategoria = new rojeru_san.RSMTextFull();
+        btnEditar1 = new rojerusan.RSButtonRound();
+        btnEliminar1 = new rojerusan.RSButtonRound();
+        btnGuardar1 = new rojerusan.RSButtonRound();
+        btnCancelar1 = new rojerusan.RSButtonRound();
+        jLabel12 = new javax.swing.JLabel();
+        ListaLibro1 = new javax.swing.JScrollPane();
+        tblLista1 = new rojerusan.RSTableMetro();
+        txtCodigo1 = new javax.swing.JLabel();
         panel4 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
@@ -595,7 +619,7 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(ListaLibro, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+                .addComponent(ListaLibro, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -617,7 +641,7 @@ public class Principal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE))
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE))
         );
 
         rSPanelsSlider1.add(panel2, "card2");
@@ -627,40 +651,155 @@ public class Principal extends javax.swing.JFrame {
         jPanel6.setBackground(new java.awt.Color(255, 102, 51));
         jPanel6.setPreferredSize(new java.awt.Dimension(1067, 90));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Sesion Busqueda");
+        jLabel2.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Categorias");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 525, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(465, Short.MAX_VALUE))
+                .addGap(21, 21, 21)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(24, 24, 24)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(27, Short.MAX_VALUE))
         );
+
+        letraCodigo8.setBackground(new java.awt.Color(255, 255, 255));
+        letraCodigo8.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        letraCodigo8.setText("Añadir Categoría:");
+
+        txtCategoria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCategoriaActionPerformed(evt);
+            }
+        });
+
+        btnEditar1.setText("Modificar");
+        btnEditar1.setColorHover(new java.awt.Color(255, 102, 51));
+        btnEditar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditar1ActionPerformed(evt);
+            }
+        });
+
+        btnEliminar1.setText("Eliminar");
+        btnEliminar1.setColorHover(new java.awt.Color(255, 102, 51));
+        btnEliminar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminar1ActionPerformed(evt);
+            }
+        });
+
+        btnGuardar1.setBackground(new java.awt.Color(0, 102, 51));
+        btnGuardar1.setText("Guardar ");
+        btnGuardar1.setColorHover(new java.awt.Color(255, 102, 51));
+        btnGuardar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardar1ActionPerformed(evt);
+            }
+        });
+
+        btnCancelar1.setBackground(new java.awt.Color(0, 102, 51));
+        btnCancelar1.setText("Cancelar");
+        btnCancelar1.setColorHover(new java.awt.Color(255, 102, 51));
+        btnCancelar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelar1ActionPerformed(evt);
+            }
+        });
+
+        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel12.setText("Lista de categorías");
+
+        ListaLibro1.setBackground(new java.awt.Color(255, 255, 255));
+
+        tblLista1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        tblLista1.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_NEXT_COLUMN);
+        tblLista1.setColorBackgoundHead(new java.awt.Color(255, 102, 51));
+        tblLista1.setColorBordeFilas(new java.awt.Color(255, 102, 51));
+        tblLista1.setColorBordeHead(new java.awt.Color(255, 102, 51));
+        tblLista1.setColorFilasBackgound2(new java.awt.Color(255, 255, 255));
+        tblLista1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblLista1MouseClicked(evt);
+            }
+        });
+        ListaLibro1.setViewportView(tblLista1);
+
+        txtCodigo1.setBackground(new java.awt.Color(255, 255, 255));
+        txtCodigo1.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        txtCodigo1.setForeground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout panel3Layout = new javax.swing.GroupLayout(panel3);
         panel3.setLayout(panel3Layout);
         panel3Layout.setHorizontalGroup(
             panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel3Layout.createSequentialGroup()
-                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 2, Short.MAX_VALUE))
+                .addGap(55, 55, 55)
+                .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panel3Layout.createSequentialGroup()
+                        .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(panel3Layout.createSequentialGroup()
+                                .addGap(58, 58, 58)
+                                .addComponent(ListaLibro1, javax.swing.GroupLayout.PREFERRED_SIZE, 538, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(120, 120, 120)
+                        .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnEliminar1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnEditar1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnGuardar1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnCancelar1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(panel3Layout.createSequentialGroup()
+                        .addComponent(letraCodigo8, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(35, 35, 35)
+                        .addComponent(txtCodigo1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 120, Short.MAX_VALUE))
+            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, 1020, Short.MAX_VALUE)
         );
         panel3Layout.setVerticalGroup(
             panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel3Layout.createSequentialGroup()
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 590, Short.MAX_VALUE))
+                .addGap(90, 90, 90)
+                .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtCodigo1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(letraCodigo8, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(20, 20, 20)
+                .addComponent(btnEditar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(22, 22, 22)
+                .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnEliminar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
+                .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panel3Layout.createSequentialGroup()
+                        .addComponent(btnGuardar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnCancelar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ListaLibro1, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(144, Short.MAX_VALUE))
         );
 
         rSPanelsSlider1.add(panel3, "card4");
@@ -703,7 +842,7 @@ public class Principal extends javax.swing.JFrame {
             panel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel4Layout.createSequentialGroup()
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 590, Short.MAX_VALUE))
+                .addGap(0, 625, Short.MAX_VALUE))
         );
 
         rSPanelsSlider1.add(panel4, "card5");
@@ -720,7 +859,7 @@ public class Principal extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(rSPanelsSlider1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(PanelMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 680, Short.MAX_VALUE)
+            .addComponent(PanelMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 715, Short.MAX_VALUE)
         );
 
         pack();
@@ -750,18 +889,20 @@ public class Principal extends javax.swing.JFrame {
          rSPanelsSlider1.setPanelSlider(1, panel2, RSPanelsSlider.DIRECT.RIGHT);   
             
          }  
+         
+           this.cmbCategoria.setModel(con.Obt_Categoria());
     }//GEN-LAST:event_btn2ActionPerformed
 
     private void btn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3ActionPerformed
              // Boton de Busqueda - LLamado de Panel1
-             
-            if(!this.btn3.isSelected()){
+          if(!this.btn3.isSelected()){
             this.btn1.setSelected(false);
             this.btn2.setSelected(false);
             this.btn3.setSelected(true); 
             this.btn4.setSelected(false);  
         rSPanelsSlider1.setPanelSlider(1, panel3, RSPanelsSlider.DIRECT.RIGHT);
         }
+      
     }//GEN-LAST:event_btn3ActionPerformed
 
     private void btn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn4ActionPerformed
@@ -1018,6 +1159,122 @@ txtCantidad.setText(tblLista.getValueAt(fila, 7) + "");
         */
     }//GEN-LAST:event_btnEliminarActionPerformed
 
+    private void tblLista1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblLista1MouseClicked
+        // AREA DE TBLISTA
+
+        // Metodo para el momento de seleccionar una lista permita poner los datos para modificaicones
+
+        int fila = tblLista.getSelectedRow();
+        txtCodigo.setText(tblLista.getValueAt(fila, 0) + "");
+        txtCategoria.setText(tblLista.getValueAt(fila, 1) + "");
+        //          btnAgregar.setEnabled(true);  // Area de Moficada 20/01/2020
+        btnEditar.setEnabled(true);
+        btnGuardar.setEnabled(false);
+        btnCancelar.setEnabled(true);
+        btnEliminar.setEnabled(true);
+    }//GEN-LAST:event_tblLista1MouseClicked
+
+    private void btnCancelar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelar1ActionPerformed
+        // TODO add your handling code here:
+
+        txtCategoria.setText("");
+        //txtFecha.setText(tblLista.getValueAt(fila, 4) + "");
+
+        // FALTA INRGESO DE CALENDAR  txtFecha
+
+        //          btnAgregar.setEnabled(true);  // Area de Moficada 20/01/2020
+        btnEditar.setEnabled(false);
+        btnGuardar.setEnabled(true);
+        btnCancelar.setEnabled(false);
+        btnEliminar.setEnabled(false);
+    }//GEN-LAST:event_btnCancelar1ActionPerformed
+
+    private void btnGuardar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardar1ActionPerformed
+        // TODO add your handling code here:
+        int i = JOptionPane.showConfirmDialog(null,"Realmente desea guardar este registro?");
+        if(i==JOptionPane.YES_OPTION){
+            Categoria cat = new Categoria();
+            String[] datos = new String[8];
+            datos[0] = txtCategoria.getText().toString().trim();
+
+            try {
+                cat.grabarNuevaCat(datos);
+                cargarLista2();
+                JOptionPane.showMessageDialog(this, "Registro agregado correctamente");
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(this, "Error al intentar insertar Registro.");
+            }
+        }
+    }//GEN-LAST:event_btnGuardar1ActionPerformed
+
+    private void btnEliminar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminar1ActionPerformed
+        // TODO add your handling code here:
+
+        int i = JOptionPane.showConfirmDialog(null,"Realmente desea eliminar este registro?");
+        if(i==JOptionPane.YES_OPTION){
+            Categoria cat = new Categoria();
+            String dato = txtCodigo.getText().toString().trim();
+            try {
+                cat.eliminarCat(dato);
+                cargarLista();
+                JOptionPane.showMessageDialog(this, "Registro eliminado correctamente");
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(this, "Error al intentar eliminar Registro.");
+            }
+        }
+
+        btnEditar.setEnabled(false);
+        btnGuardar.setEnabled(true);
+        btnCancelar.setEnabled(false);
+        btnEliminar.setEnabled(false);
+
+        //        int fila=tblLista.getSelectedRow();
+        //        if(fila>=0){
+            //            model.removeRow(fila);
+            //
+            //
+            //        }else{
+            //            JOptionPane.showMessageDialog(null, "Seleccione La Fila");
+            //        }
+
+        // Opcion Adicional de Eliminar Todo
+        /*
+        int fila = tblLista.getRowCount();
+        for ( int i = fila-1; i >=0 ; i--)¨{
+            model.removeRow(i);
+        }
+
+        */
+    }//GEN-LAST:event_btnEliminar1ActionPerformed
+
+    private void btnEditar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditar1ActionPerformed
+        // TODO add your handling code here:
+        int i = JOptionPane.showConfirmDialog(null,"Realmente desea editar este registro?");
+        if(i==JOptionPane.YES_OPTION){
+            Categoria cat= new Categoria();
+            String[] datos = new String[8];
+            datos[0] = txtCodigo.getText().toString().trim();
+            datos[1] = txtCategoria.getText().toString().trim();
+
+            try {
+                cat.modificarCategoria(datos);
+                cargarLista();
+                JOptionPane.showMessageDialog(this, "Registro modificado correctamente");
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(this, "Error al intentar editar Registro.");
+            }
+        }
+
+        btnEditar.setEnabled(false);
+        btnGuardar.setEnabled(true);
+        btnCancelar.setEnabled(false);
+        btnEliminar.setEnabled(false);
+    }//GEN-LAST:event_btnEditar1ActionPerformed
+
+    private void txtCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCategoriaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCategoriaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1055,6 +1312,7 @@ txtCantidad.setText(tblLista.getValueAt(fila, 7) + "");
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane ListaLibro;
+    private javax.swing.JScrollPane ListaLibro1;
     private javax.swing.JPanel PanelMenu;
     private rojerusan.RSButtonIconI btn1;
     private rojerusan.RSButtonIconI btn2;
@@ -1062,15 +1320,20 @@ txtCantidad.setText(tblLista.getValueAt(fila, 7) + "");
     private rojerusan.RSButtonIconI btn4;
     private javax.swing.JButton btnAgregar;
     private rojerusan.RSButtonRound btnCancelar;
+    private rojerusan.RSButtonRound btnCancelar1;
     private rojerusan.RSButtonRound btnEditar;
+    private rojerusan.RSButtonRound btnEditar1;
     private rojerusan.RSButtonRound btnEliminar;
+    private rojerusan.RSButtonRound btnEliminar1;
     private rojerusan.RSButtonRound btnGuardar;
+    private rojerusan.RSButtonRound btnGuardar1;
     private rojerusan.RSButtonIconI btnSalir;
     private rojerusan.RSComboMetro cmbCategoria;
     private com.toedter.calendar.JDateChooser dtFecha;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -1086,6 +1349,7 @@ txtCantidad.setText(tblLista.getValueAt(fila, 7) + "");
     private javax.swing.JLabel letraCodigo5;
     private javax.swing.JLabel letraCodigo6;
     private javax.swing.JLabel letraCodigo7;
+    private javax.swing.JLabel letraCodigo8;
     private javax.swing.JLabel letraCodigo9;
     private javax.swing.JPanel panel2;
     private javax.swing.JPanel panel3;
@@ -1095,9 +1359,12 @@ txtCantidad.setText(tblLista.getValueAt(fila, 7) + "");
     private rojerusan.RSPanelImage rSPanelImage1;
     private rojerusan.RSPanelsSlider rSPanelsSlider1;
     private rojerusan.RSTableMetro tblLista;
+    private rojerusan.RSTableMetro tblLista1;
     private rojeru_san.RSMTextFull txtAutor;
     private rojeru_san.RSMTextFull txtCantidad;
+    private rojeru_san.RSMTextFull txtCategoria;
     private rojeru_san.RSMTextFull txtCodigo;
+    private javax.swing.JLabel txtCodigo1;
     private javax.swing.JTextArea txtDescripcion;
     private rojeru_san.RSMTextFull txtEditorial;
     private javax.swing.JLabel txtFecha;
