@@ -37,7 +37,10 @@ public class Libro {
  public Vector getLibro() {
     Vector vRet = null;
     try {
-        String sql = "select id ,titulo,autor,categoria,editorial,fecha_ingreso,descripcion,cantidad from libro order by id";
+   // Prueba Filtro     
+    // String sql = "select * from libro where titulo LIKE '%" + sql + "%'";
+   // Listado Normal
+    String sql = "select id ,titulo,autor,categoria,editorial,fecha_ingreso,descripcion,cantidad from libro order by id";
         cBaseDatos bd = new cBaseDatos();        
         Connection xcon = bd.Conectar();
         Statement stm = xcon.createStatement();
@@ -52,7 +55,7 @@ public class Libro {
     return vRet;
 }
  
- public void grabarNuevoLibro( String[] datos ) throws SQLException {
+  public void grabarNuevoLibro( String[] datos ) throws SQLException {
         cBaseDatos db = new cBaseDatos();
         // si iniciaria un contador automatico String          String xcod = db.generarCodigo("areas","codigo");
         String xcod = datos[0];
@@ -60,7 +63,6 @@ public class Libro {
         String xaut = datos[2];
         String xcat = datos[3];
         String xedi = datos[4];
-      //  String xfec = datos[4];   
         String xfec = datos[5];   
         String xdes = datos[6];
         String xcan = datos[7];
@@ -80,7 +82,6 @@ public class Libro {
         
         
     }
-
  
  
  public void modificarLibro( String[] datos ) throws SQLException {
@@ -101,9 +102,7 @@ public class Libro {
         ps.setString(2, xaut);
         ps.setString(3, xcat);
         ps.setString(4, xedi);
-        ps.setString(5, xfec);
-        //  ps.setString(4, xfec);
-        
+        ps.setString(5, xfec);       
         ps.setString(6, xdes);
         ps.setString(7, xcan);
         ps.executeUpdate();

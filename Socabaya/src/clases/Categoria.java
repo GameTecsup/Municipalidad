@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+Area de Categoria
  */
 package clases;
 
@@ -19,7 +17,7 @@ import java.util.Vector;
 
 public class Categoria {
     
-       private Vector ResultSetToVector(ResultSet rs) throws SQLException {
+    private Vector ResultSetToVector(ResultSet rs) throws SQLException {
     Vector vRows = new Vector();
     while(rs.next()) {
         Vector vCol = new Vector();
@@ -32,8 +30,10 @@ public class Categoria {
     }
     return vRows;
 }
+       
+       // Lista las categorias
        public Vector getCategoria() {
-    Vector vRet = null;
+         Vector vRet = null;
     try {
         String sql = "select  id,categorias from categorias order by id";
         cBaseDatos bd = new cBaseDatos();        
@@ -49,19 +49,27 @@ public class Categoria {
     }
     return vRet;
 }
+       
+       
+       // Agregar Nueva Categoria
        public void grabarNuevaCat( String[] datos ) throws SQLException {
         cBaseDatos db = new cBaseDatos();
-        // si iniciaria un contador automatico String          String xcod = db.generarCodigo("areas","codigo");
+   
+        String xcod = db.generarCodigo("categorias","id");
         String xcat = datos[0];
-        String sql = "insert into categorias(categorias) values (?) ";
+        String sql = "insert into categorias(id,categorias) values (?,?) ";
         Connection xcon = db.Conectar();
         PreparedStatement ps = xcon.prepareStatement(sql);
-        ps.setString(1, xcat);
+        // Area de almacenado
+        ps.setString(1, xcod);
+        ps.setString(2, xcat);
         ps.executeUpdate();
         xcon.close();
         
         
     }
+       
+       // Modicar Categoria
        public void modificarCategoria( String[] datos ) throws SQLException {
         String xcod = datos[0];
         String xcat = datos[1];
@@ -75,6 +83,10 @@ public class Categoria {
         ps.executeUpdate();
         xcon.close();
     }
+       
+       
+       
+       // Eleminar Categoria Mediante el ID -SQL
         public void eliminarCat( String codigo ) throws SQLException {
         String sql  = "DELETE FROM categorias WHERE id=?";
         cBaseDatos db = new cBaseDatos();

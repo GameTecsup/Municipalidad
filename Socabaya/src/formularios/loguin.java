@@ -5,6 +5,7 @@
  */
 package formularios;
 
+
 import clases.cBaseDatos;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -44,11 +45,11 @@ public class loguin extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         rSPanelGradiente1 = new rspanelgradiente.RSPanelGradiente();
         rSPanelImage1 = new rojerusan.RSPanelImage();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        title = new rojerusan.RSLabelImage();
+        btnSalir = new rojerusan.RSButtonRound();
         rSPanelShadow2 = new rojeru_san.RSPanelShadow();
-        jPanel7 = new javax.swing.JPanel();
-        rSPanelImage8 = new rojerusan.RSPanelImage();
+        jPanel2 = new javax.swing.JPanel();
+        rSPanelImage2 = new rojerusan.RSPanelImage();
         rSPanelImage3 = new rojerusan.RSPanelImage();
         txtUsuario = new rojeru_san.RSMTextFull();
         txtClave = new rojeru_san.RSMPassView();
@@ -64,49 +65,56 @@ public class loguin extends javax.swing.JFrame {
         rSPanelImage1.setImagen(new javax.swing.ImageIcon(getClass().getResource("/img/login.jpg"))); // NOI18N
         rSPanelImage1.setPreferredSize(new java.awt.Dimension(369, 141));
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
-        jLabel1.setForeground(java.awt.Color.white);
-        jLabel1.setText("SOCABAYA");
+        title.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/letra.png"))); // NOI18N
+        title.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                titleMouseDragged(evt);
+            }
+        });
+        title.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                titleMousePressed(evt);
+            }
+        });
 
-        jLabel2.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Biblioteca Municipal de");
+        btnSalir.setBackground(new java.awt.Color(255, 51, 51));
+        btnSalir.setText("x");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout rSPanelImage1Layout = new javax.swing.GroupLayout(rSPanelImage1);
         rSPanelImage1.setLayout(rSPanelImage1Layout);
         rSPanelImage1Layout.setHorizontalGroup(
             rSPanelImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(rSPanelImage1Layout.createSequentialGroup()
-                .addGap(61, 61, 61)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rSPanelImage1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(46, 46, 46)
+                .addComponent(title, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         rSPanelImage1Layout.setVerticalGroup(
             rSPanelImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rSPanelImage1Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, Short.MAX_VALUE)
-                .addGap(21, 21, 21))
+            .addComponent(title, javax.swing.GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE)
+            .addGroup(rSPanelImage1Layout.createSequentialGroup()
+                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        jPanel7.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
-        rSPanelImage8.setImagen(new javax.swing.ImageIcon(getClass().getResource("/img/007-lock-1.png"))); // NOI18N
+        rSPanelImage2.setImagen(new javax.swing.ImageIcon(getClass().getResource("/img/007-lock-1.png"))); // NOI18N
 
-        javax.swing.GroupLayout rSPanelImage8Layout = new javax.swing.GroupLayout(rSPanelImage8);
-        rSPanelImage8.setLayout(rSPanelImage8Layout);
-        rSPanelImage8Layout.setHorizontalGroup(
-            rSPanelImage8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout rSPanelImage2Layout = new javax.swing.GroupLayout(rSPanelImage2);
+        rSPanelImage2.setLayout(rSPanelImage2Layout);
+        rSPanelImage2Layout.setHorizontalGroup(
+            rSPanelImage2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 41, Short.MAX_VALUE)
         );
-        rSPanelImage8Layout.setVerticalGroup(
-            rSPanelImage8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        rSPanelImage2Layout.setVerticalGroup(
+            rSPanelImage2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
@@ -135,75 +143,61 @@ public class loguin extends javax.swing.JFrame {
             }
         });
 
-        btnIngresar.setBackground(new java.awt.Color(0, 102, 102));
-        btnIngresar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 102), 1, true));
         btnIngresar.setText("INGRESAR");
-        btnIngresar.setColorHover(new java.awt.Color(102, 102, 102));
         btnIngresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnIngresarActionPerformed(evt);
             }
         });
 
-        btnCodigo.setBackground(new java.awt.Color(255, 255, 255));
-        btnCodigo.setBorder(null);
+        btnCodigo.setBackground(new java.awt.Color(0, 102, 51));
         btnCodigo.setText("Olvido su Contraseña .....?");
-        btnCodigo.setColorHover(new java.awt.Color(255, 255, 255));
-        btnCodigo.setColorText(new java.awt.Color(255, 0, 0));
-        btnCodigo.setColorTextHover(new java.awt.Color(255, 102, 102));
-        btnCodigo.setFont(new java.awt.Font("Gadugi", 1, 12)); // NOI18N
         btnCodigo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCodigoActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addContainerGap(41, Short.MAX_VALUE)
-                        .addComponent(rSPanelImage8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnIngresar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                        .addComponent(rSPanelImage2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
+                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(rSPanelImage3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtClave, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtClave, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnCodigo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(37, 37, 37))
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(109, 109, 109)
-                        .addComponent(btnIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(82, 82, 82)
-                        .addComponent(btnCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(33, 33, 33)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(txtUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(rSPanelImage8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(rSPanelImage2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(27, 27, 27)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(txtClave, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(rSPanelImage3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                .addComponent(btnIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                 .addComponent(btnCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(25, 25, 25))
+                .addGap(18, 18, 18)
+                .addComponent(btnIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35))
         );
 
-        rSPanelShadow2.add(jPanel7, java.awt.BorderLayout.CENTER);
+        rSPanelShadow2.add(jPanel2, java.awt.BorderLayout.CENTER);
 
         javax.swing.GroupLayout rSPanelGradiente1Layout = new javax.swing.GroupLayout(rSPanelGradiente1);
         rSPanelGradiente1.setLayout(rSPanelGradiente1Layout);
@@ -220,8 +214,8 @@ public class loguin extends javax.swing.JFrame {
             .addGroup(rSPanelGradiente1Layout.createSequentialGroup()
                 .addComponent(rSPanelImage1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(rSPanelShadow2, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addComponent(rSPanelShadow2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -251,47 +245,78 @@ public class loguin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCodigoActionPerformed
-        // Boton de llamado a un JFrame
-        codigo ingreso = new codigo();
-        ingreso.setVisible(true);
-    }//GEN-LAST:event_btnCodigoActionPerformed
-
-    private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
-        // Boton para validar Ingreso
-
-        String usuario = txtUsuario.getText().trim().toString();
-        String clave = txtClave.getText().toString();
-
-        cBaseDatos base = new cBaseDatos();
-
-        System.out.println(base.validarUsuario(usuario,clave));
-
-        if(base.validarUsuario(usuario, clave)){
-            Principal frmloguin = new Principal();
-
-            frmloguin.setVisible(true);
-            this.setVisible(false);
-
-        }else{
-            JOptionPane.showMessageDialog(null,"Error de credenciales", "Error de Ingreso",JOptionPane.WARNING_MESSAGE);
-            txtUsuario.setText("");
-            txtClave.setText("");
-            txtUsuario.requestFocus();
-
-        }
-    }//GEN-LAST:event_btnIngresarActionPerformed
+    private void txtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUsuarioActionPerformed
 
     private void txtClaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtClaveActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtClaveActionPerformed
 
-    private void txtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtUsuarioActionPerformed
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        // Boton de Salir
+        
+        
+    int rpta= JOptionPane.showConfirmDialog(null, "Desea Salir Del Sitema","Biblioteca Municipal", 
+     JOptionPane.YES_NO_OPTION);
+        
+     if ( rpta == JOptionPane.YES_NO_OPTION){  
+        System.exit(0);
+        
+        }  
+    }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
+        // Boton para validar Ingreso
+        
+         
+                 String usuario = txtUsuario.getText().trim().toString();
+        String clave = txtClave.getText().toString();
+        
+        cBaseDatos base = new cBaseDatos();
+        
+        System.out.println(base.validarUsuario(usuario,clave));
+        
+        if(base.validarUsuario(usuario, clave)){
+//            Inicio frmloguin = new Inicio();
+        Principal frmloguin = new Principal();
+            
+            frmloguin.setVisible(true);
+           this.setVisible(false);
+            
+        }else{
+        JOptionPane.showMessageDialog(null,"Error de credenciales", "Error de Ingreso",JOptionPane.WARNING_MESSAGE);
+        txtUsuario.setText("");
+        txtClave.setText("");
+        txtUsuario.requestFocus();
+            
+        }       
+        
+        
+    }//GEN-LAST:event_btnIngresarActionPerformed
+
+    private void btnCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCodigoActionPerformed
+        // Boton de llamado a un JFrame 
+    codigo ingreso = new codigo();
+    ingreso.setVisible(true);
+    }//GEN-LAST:event_btnCodigoActionPerformed
 
   // Declarar variables de movilidad   - para  title
     int x , y ;
+    private void titleMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_titleMouseDragged
+        // Label Image title - Socabaya - Mover de acuerdo a la localizacion -login
+                        this.setLocation(this.getLocation().x+evt.getX()-x ,
+                this.getLocation().y + evt.getY() - y);
+        
+    }//GEN-LAST:event_titleMouseDragged
+
+    private void titleMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_titleMousePressed
+             //   Agregar Ejes para el evento   - del loguin
+        
+        x=evt.getX();
+        y=evt.getY();
+    }//GEN-LAST:event_titleMousePressed
+
     /**
      * @param args the command line arguments
      */
@@ -330,26 +355,16 @@ public class loguin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private rojerusan.RSButtonRound btnCodigo;
     private rojerusan.RSButtonRound btnIngresar;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private rojerusan.RSButtonRound btnSalir;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
     private rspanelgradiente.RSPanelGradiente rSPanelGradiente1;
     private rojerusan.RSPanelImage rSPanelImage1;
     private rojerusan.RSPanelImage rSPanelImage2;
     private rojerusan.RSPanelImage rSPanelImage3;
-    private rojerusan.RSPanelImage rSPanelImage4;
-    private rojerusan.RSPanelImage rSPanelImage5;
-    private rojerusan.RSPanelImage rSPanelImage6;
-    private rojerusan.RSPanelImage rSPanelImage7;
-    private rojerusan.RSPanelImage rSPanelImage8;
     private rojeru_san.RSPanelShadow rSPanelShadow1;
     private rojeru_san.RSPanelShadow rSPanelShadow2;
+    private rojerusan.RSLabelImage title;
     private rojeru_san.RSMPassView txtClave;
     private rojeru_san.RSMTextFull txtUsuario;
     // End of variables declaration//GEN-END:variables

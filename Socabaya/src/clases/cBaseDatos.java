@@ -41,7 +41,7 @@ public class cBaseDatos {
     
 
     // Permite Autogenerar un codigo para una tabla de la base datos una vez realizado cualquier procesiso  ------ Evaluar 31/01/2020
-    protected String generarCodigo(String tabla, String campo) throws SQLException {
+protected String generarCodigo(String tabla, String campo) throws SQLException {
    String rpta = "";
    String sql = "select count(*) from " + tabla;
    Connection xcon = this.Conectar();
@@ -122,7 +122,8 @@ public class cBaseDatos {
          
     return false;
     
-}
+} 
+  // Seleccion de Categoria   --  Averiguar Cambio
       public DefaultComboBoxModel Obt_Categoria(){
           DefaultComboBoxModel listaModelo= new DefaultComboBoxModel(); 
         try{
@@ -143,6 +144,6 @@ public class cBaseDatos {
         }
         return listaModelo;
     }
-     
+   
    
     }
