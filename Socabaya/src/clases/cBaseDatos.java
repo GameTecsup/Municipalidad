@@ -16,15 +16,31 @@ import javax.swing.DefaultComboBoxModel;
 
 
 public class cBaseDatos {
+   // Conexion del Mysql Worbentch local 
+//    String driver = "com.mysql.cj.jdbc.Driver";
+//    String url = "jdbc:mysql://localhost:3306/socabaya?useSSL=false&serverTimezone=UTC"; 
+//    
+//    
+//    String usuario = "root";
+//    String clave = "tecsup";
     
-    // Conexion del Mysql Worbentch
-    String driver = "com.mysql.cj.jdbc.Driver";
-    String url = "jdbc:mysql://localhost:3306/socabaya?useSSL=false&serverTimezone=UTC"; 
     
     
-    String usuario = "root";
-    String clave = "tecsup";
     
+    // Conexion del Mysql Worbentch con clever cloud
+    // nombre de la base de datos    ---   bcmkd5aq7ewvzyvtwg0a
+    // nombre del usuario           ---    uqpoqsmdjvec80vu
+    // nombre del contraseña        ---    i9WIptxWizN8NTiimoF7
+    // Puerto 3306
+    // Host                         ---    bcmkd5aq7ewvzyvtwg0a-mysql.services.clever-cloud.com
+    
+    
+    
+    String driver = "com.mysql.cj.jdbc.Driver";    
+    String url = "jdbc:mysql://bcmkd5aq7ewvzyvtwg0a-mysql.services.clever-cloud.com:3306/bcmkd5aq7ewvzyvtwg0a?useSSL=false&serverTimezone=UTC";     
+    String usuario = "uqpoqsmdjvec80vu";
+    String clave = "i9WIptxWizN8NTiimoF7";
+//    
     public Connection Conectar() {
         try {
             Class.forName(driver);
