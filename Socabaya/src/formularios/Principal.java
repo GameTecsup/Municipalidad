@@ -14,6 +14,7 @@ import java.awt.event.KeyEvent;
 import java.sql.SQLException;
 import java.util.Vector;
 import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
@@ -140,6 +141,7 @@ public class Principal extends javax.swing.JFrame {
         btn2 = new rojerusan.RSButtonIconI();
         btn3 = new rojerusan.RSButtonIconI();
         btn4 = new rojerusan.RSButtonIconI();
+        btn5 = new rojerusan.RSButtonIconI();
         btnSalir = new rojerusan.RSButtonIconI();
         rSPanelsSlider1 = new rojerusan.RSPanelsSlider();
         panel1 = new javax.swing.JPanel();
@@ -219,6 +221,15 @@ public class Principal extends javax.swing.JFrame {
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
+        panel5 = new javax.swing.JPanel();
+        jPanel11 = new javax.swing.JPanel();
+        jLabel13 = new javax.swing.JLabel();
+        jPanel12 = new javax.swing.JPanel();
+        rSPanelGradiente4 = new rspanelgradiente.RSPanelGradiente();
+        txtruta = new javax.swing.JTextField();
+        jLabel26 = new javax.swing.JLabel();
+        btnSeleccionar = new javax.swing.JButton();
+        btnGenerar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -291,6 +302,17 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        btn5.setBackground(new java.awt.Color(255, 102, 51));
+        btn5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/005-login.png"))); // NOI18N
+        btn5.setText("Exportacion");
+        btn5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btn5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btn5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn5ActionPerformed(evt);
+            }
+        });
+
         btnSalir.setBackground(new java.awt.Color(255, 102, 51));
         btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Salir.png"))); // NOI18N
         btnSalir.setText("Salir");
@@ -307,17 +329,18 @@ public class Principal extends javax.swing.JFrame {
         rSPanelGradiente1Layout.setHorizontalGroup(
             rSPanelGradiente1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(rSPanelGradiente1Layout.createSequentialGroup()
+                .addComponent(rSPanelImage1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 1, Short.MAX_VALUE))
+            .addGroup(rSPanelGradiente1Layout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addGroup(rSPanelGradiente1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btn1, javax.swing.GroupLayout.DEFAULT_SIZE, 263, Short.MAX_VALUE)
                     .addComponent(btn2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btn3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btn4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnSalir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnSalir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(rSPanelGradiente1Layout.createSequentialGroup()
-                .addComponent(rSPanelImage1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 1, Short.MAX_VALUE))
         );
         rSPanelGradiente1Layout.setVerticalGroup(
             rSPanelGradiente1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -331,6 +354,8 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(btn3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btn4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btn5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -1188,6 +1213,123 @@ public class Principal extends javax.swing.JFrame {
 
         rSPanelsSlider1.add(panel4, "card5");
 
+        panel5.setName("panel4"); // NOI18N
+
+        jPanel11.setBackground(new java.awt.Color(255, 102, 51));
+        jPanel11.setPreferredSize(new java.awt.Dimension(1067, 90));
+
+        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setText("Sesion Copia de Seguridad De Base Datos");
+
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 525, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(465, Short.MAX_VALUE))
+        );
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        rSPanelGradiente4.setColorPrimario(new java.awt.Color(255, 255, 255));
+        rSPanelGradiente4.setColorSecundario(new java.awt.Color(255, 255, 255));
+        rSPanelGradiente4.setGradiente(rspanelgradiente.RSPanelGradiente.Gradiente.ESQUINA_3);
+
+        txtruta.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        txtruta.setForeground(new java.awt.Color(0, 112, 192));
+
+        jLabel26.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        jLabel26.setText("Por favor Ingrese la ruta donde se exportara la copia de la base de datos .");
+
+        btnSeleccionar.setBackground(new java.awt.Color(0, 112, 192));
+        btnSeleccionar.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        btnSeleccionar.setText("Seleccionar");
+        btnSeleccionar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSeleccionarActionPerformed(evt);
+            }
+        });
+
+        btnGenerar.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        btnGenerar.setText("Generar");
+        btnGenerar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGenerarActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout rSPanelGradiente4Layout = new javax.swing.GroupLayout(rSPanelGradiente4);
+        rSPanelGradiente4.setLayout(rSPanelGradiente4Layout);
+        rSPanelGradiente4Layout.setHorizontalGroup(
+            rSPanelGradiente4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(rSPanelGradiente4Layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addGroup(rSPanelGradiente4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 608, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(rSPanelGradiente4Layout.createSequentialGroup()
+                        .addComponent(txtruta, javax.swing.GroupLayout.PREFERRED_SIZE, 545, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(76, 76, 76)
+                        .addComponent(btnSeleccionar, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rSPanelGradiente4Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnGenerar, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29))
+        );
+        rSPanelGradiente4Layout.setVerticalGroup(
+            rSPanelGradiente4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(rSPanelGradiente4Layout.createSequentialGroup()
+                .addGap(47, 47, 47)
+                .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(rSPanelGradiente4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtruta, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSeleccionar, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 384, Short.MAX_VALUE)
+                .addComponent(btnGenerar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+        jPanel12.setLayout(jPanel12Layout);
+        jPanel12Layout.setHorizontalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(rSPanelGradiente4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel12Layout.setVerticalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(rSPanelGradiente4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout panel5Layout = new javax.swing.GroupLayout(panel5);
+        panel5.setLayout(panel5Layout);
+        panel5Layout.setHorizontalGroup(
+            panel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel5Layout.createSequentialGroup()
+                .addGroup(panel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE)
+                    .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 2, Short.MAX_VALUE))
+        );
+        panel5Layout.setVerticalGroup(
+            panel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel5Layout.createSequentialGroup()
+                .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        rSPanelsSlider1.add(panel5, "card5");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -1213,7 +1355,8 @@ public class Principal extends javax.swing.JFrame {
             this.btn1.setSelected(true);
             this.btn2.setSelected(false);
             this.btn3.setSelected(false);  
-            this.btn4.setSelected(false);              
+            this.btn4.setSelected(false);   
+             this.btn5.setSelected(false);
         rSPanelsSlider1.setPanelSlider(1, panel1, RSPanelsSlider.DIRECT.RIGHT);
         }
               
@@ -1226,7 +1369,8 @@ public class Principal extends javax.swing.JFrame {
             this.btn1.setSelected(false);
             this.btn2.setSelected(true);
             this.btn3.setSelected(false);
-            this.btn4.setSelected(false);              
+            this.btn4.setSelected(false);
+             this.btn5.setSelected(false);
          rSPanelsSlider1.setPanelSlider(1, panel2, RSPanelsSlider.DIRECT.RIGHT);   
             
          }  
@@ -1239,7 +1383,8 @@ public class Principal extends javax.swing.JFrame {
             this.btn1.setSelected(false);
             this.btn2.setSelected(false);
             this.btn3.setSelected(true); 
-            this.btn4.setSelected(false);  
+            this.btn4.setSelected(false); 
+             this.btn5.setSelected(false);
         rSPanelsSlider1.setPanelSlider(1, panel3, RSPanelsSlider.DIRECT.RIGHT);
         }
     }//GEN-LAST:event_btn3ActionPerformed
@@ -1251,20 +1396,11 @@ public class Principal extends javax.swing.JFrame {
             this.btn1.setSelected(false);
             this.btn2.setSelected(false);
             this.btn3.setSelected(false); 
-            this.btn4.setSelected(true);     
+            this.btn4.setSelected(true);  
+            this.btn5.setSelected(false); 
         rSPanelsSlider1.setPanelSlider(1, panel4, RSPanelsSlider.DIRECT.RIGHT);
         }
     }//GEN-LAST:event_btn4ActionPerformed
-
-    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-            int rpta= JOptionPane.showConfirmDialog(null, "Desea Salir Del Sitema","Biblioteca Municipal", 
-                JOptionPane.YES_NO_OPTION);
-        
-        if ( rpta == JOptionPane.YES_NO_OPTION){  
-        System.exit(0);
-        
-        }
-    }//GEN-LAST:event_btnSalirActionPerformed
 
     private void txtCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoActionPerformed
         // TODO add your handling code here:
@@ -1402,7 +1538,7 @@ txtCantidad.setText(tblLista.getValueAt(fila, 7) + "");
  //  10-02-2020         btnAgregar.setEnabled(true);
         btnEditar.setEnabled(true);
         btnGuardar.setEnabled(true);
-        btnCancelar.setEnabled(false);
+        btnCancelar.setEnabled(true);
         btnEliminar.setEnabled(false);
     }//GEN-LAST:event_btnEditarActionPerformed
 
@@ -1422,10 +1558,10 @@ txtCantidad.setText(tblLista.getValueAt(fila, 7) + "");
             }
         }
    //     btnAgregar.setEnabled(true);
-        btnEditar.setEnabled(false);  
-        btnGuardar.setEnabled(false);
-        btnCancelar.setEnabled(false);
-        btnEliminar.setEnabled(false);
+        btnEditar.setEnabled(true);  
+        btnGuardar.setEnabled(true);
+        btnCancelar.setEnabled(true);
+        btnEliminar.setEnabled(true);
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void txtBusquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBusquedaActionPerformed
@@ -1563,9 +1699,87 @@ txtCantidad.setText(tblLista.getValueAt(fila, 7) + "");
         // TODO add your handling code here:
     }//GEN-LAST:event_cmbCategoriaActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    private void btnSeleccionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccionarActionPerformed
+// Generar accion de ruta     
+
+  exportar();
+
+    }//GEN-LAST:event_btnSeleccionarActionPerformed
+
+    private void btnGenerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarActionPerformed
+        // Area de Generar
+        
+                
+        String ruta = txtruta.getText();
+        String nombrescripsql ="\\socabaya.sql";
+        String backup="";
+        
+        try { 
+            if(ruta.trim().length()>0){
+                backup="C:\\Program Files\\MySQL\\MySQL Server 8.0\\bin\\mysqldump --routines -u" + con.getUsuario()+" -p"+con.getContraseña()+" -B " + con.getBase()+" -r "+ruta +nombrescripsql;
+                //     backup="mysqldump"    
+                //  backup="mysqldump --opt -u"    
+                // Copiar la ruta
+                Runtime rtime = Runtime.getRuntime();
+                rtime.exec(backup);
+                
+                 JOptionPane.showMessageDialog( null,"Exitoso","Mensaje de SISTEMA", JOptionPane.INFORMATION_MESSAGE);
+                
+        }else{ 
+                JOptionPane.showMessageDialog( null,"Seleccione carpeta","Mensaje de SISTEMA", JOptionPane.WARNING_MESSAGE);
+                
+            
+            }
+                }  
+        catch(Exception e ){
+           JOptionPane.showMessageDialog( null,e.getMessage(),"Error", JOptionPane.WARNING_MESSAGE);
+    }                
+        
+    }//GEN-LAST:event_btnGenerarActionPerformed
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+                   int rpta= JOptionPane.showConfirmDialog(null, "Desea Salir Del Sitema","Biblioteca Municipal", 
+                JOptionPane.YES_NO_OPTION);
+        
+        if ( rpta == JOptionPane.YES_NO_OPTION){  
+        System.exit(0);
+        
+        }
+    }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void btn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn5ActionPerformed
+        // TODO add your handling code here:
+        
+                  
+            if(!this.btn5.isSelected()){
+            this.btn1.setSelected(false);
+            this.btn2.setSelected(false);
+            this.btn3.setSelected(false); 
+            this.btn4.setSelected(false);  
+            this.btn5.setSelected(true); 
+        rSPanelsSlider1.setPanelSlider(1, panel5, RSPanelsSlider.DIRECT.RIGHT);
+         } 
+    }//GEN-LAST:event_btn5ActionPerformed
+
+
+        public void exportar(){
+        JFileChooser archivos = new JFileChooser();
+        archivos.setDialogTitle("Seleccionar Carpeta");
+        archivos.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        int guardarscript = archivos.showSaveDialog(null);
+       
+        if ( guardarscript ==JFileChooser.APPROVE_OPTION ){
+            
+            String ruta = archivos.getSelectedFile().getPath();
+            txtruta.setText(ruta);
+            
+        }
+        
+        
+    }
+    
+    
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -1606,6 +1820,7 @@ txtCantidad.setText(tblLista.getValueAt(fila, 7) + "");
     private rojerusan.RSButtonIconI btn2;
     private rojerusan.RSButtonIconI btn3;
     private rojerusan.RSButtonIconI btn4;
+    private rojerusan.RSButtonIconI btn5;
     private javax.swing.JButton btnCambio;
     private rojerusan.RSButtonRound btnCancelar;
     private rojerusan.RSButtonRound btnCancelarCate;
@@ -1613,15 +1828,18 @@ txtCantidad.setText(tblLista.getValueAt(fila, 7) + "");
     private rojerusan.RSButtonRound btnEditarCate;
     private rojerusan.RSButtonRound btnEliminar;
     private rojerusan.RSButtonRound btnEliminarCate;
+    private javax.swing.JButton btnGenerar;
     private rojerusan.RSButtonRound btnGuardar;
     private rojerusan.RSButtonRound btnGuardarCate;
     private rojerusan.RSButtonIconI btnSalir;
+    private javax.swing.JButton btnSeleccionar;
     private rojerusan.RSComboMetro cmbCategoria;
     private com.toedter.calendar.JDateChooser dtFecha;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
@@ -1635,6 +1853,7 @@ txtCantidad.setText(tblLista.getValueAt(fila, 7) + "");
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1644,6 +1863,8 @@ txtCantidad.setText(tblLista.getValueAt(fila, 7) + "");
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -1665,10 +1886,12 @@ txtCantidad.setText(tblLista.getValueAt(fila, 7) + "");
     private javax.swing.JPanel panel2;
     private javax.swing.JPanel panel3;
     private javax.swing.JPanel panel4;
+    private javax.swing.JPanel panel5;
     private rojerusan.RSLabelImage rSLabelImage1;
     private rspanelgradiente.RSPanelGradiente rSPanelGradiente1;
     private rspanelgradiente.RSPanelGradiente rSPanelGradiente2;
     private rspanelgradiente.RSPanelGradiente rSPanelGradiente3;
+    private rspanelgradiente.RSPanelGradiente rSPanelGradiente4;
     private rojerusan.RSPanelImage rSPanelImage1;
     private rojerusan.RSPanelsSlider rSPanelsSlider1;
     private javax.swing.JLabel ss;
@@ -1686,5 +1909,6 @@ txtCantidad.setText(tblLista.getValueAt(fila, 7) + "");
     private javax.swing.JLabel txtSubTitle;
     private rojeru_san.RSMTextFull txtTitulo;
     private javax.swing.JLabel txtTituloCate;
+    private javax.swing.JTextField txtruta;
     // End of variables declaration//GEN-END:variables
 }

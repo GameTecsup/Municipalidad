@@ -17,15 +17,15 @@ import javax.swing.DefaultComboBoxModel;
 
 public class cBaseDatos {
    // Conexion del Mysql Worbentch local 
-//    String driver = "com.mysql.cj.jdbc.Driver";
-//    String url = "jdbc:mysql://localhost:3306/socabaya?useSSL=false&serverTimezone=UTC"; 
-//    
-//    
-//    String usuario = "root";
-//    String clave = "tecsup";
+    String driver = "com.mysql.cj.jdbc.Driver";
+    String url = "jdbc:mysql://localhost:3306/socabaya?useSSL=false&serverTimezone=UTC"; 
     
     
+    String usuario = "root";
+    String clave = "tecsup";
     
+    
+        String base = "socabaya";
     
     // Conexion del Mysql Worbentch con clever cloud
     // nombre de la base de datos    ---   bcmkd5aq7ewvzyvtwg0a
@@ -36,10 +36,10 @@ public class cBaseDatos {
     
     
     
-    String driver = "com.mysql.cj.jdbc.Driver";    
-    String url = "jdbc:mysql://bcmkd5aq7ewvzyvtwg0a-mysql.services.clever-cloud.com:3306/bcmkd5aq7ewvzyvtwg0a?useSSL=false&serverTimezone=UTC";     
-    String usuario = "uqpoqsmdjvec80vu";
-    String clave = "i9WIptxWizN8NTiimoF7";
+//        String driver = "com.mysql.cj.jdbc.Driver";    
+//        String url = "jdbc:mysql://bcmkd5aq7ewvzyvtwg0a-mysql.services.clever-cloud.com:3306/bcmkd5aq7ewvzyvtwg0a?useSSL=false&serverTimezone=UTC";     
+//        String usuario = "uqpoqsmdjvec80vu";
+//        String clave = "i9WIptxWizN8NTiimoF7";
 //    
     public Connection Conectar() {
         try {
@@ -162,4 +162,18 @@ protected String generarCodigo(String tabla, String campo) throws SQLException {
     }
    
    
+      
+      
+         // Retorno    
+      public String getUsuario(){
+          return usuario;
+      }
+         public String getContraseña(){
+          return clave;
+      }   
+           public String getBase(){
+          return base;
+      } 
+      
+      
     }
